@@ -1,0 +1,56 @@
+<!-- <h2> IP列表 </h2> -->
+
+<table class="table table-bordered">
+
+  <thead>
+    <tr>
+      <th>IP位址</th>
+      <th>使用類別</th>
+      <th>使用人</th>
+      <th>分機電話</th>
+      <th>MAC位址</th>
+      <th>網路孔位</th>
+      <th>備註說明</th>
+      <th>最後更新</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td>
+           <%= list.ip %>
+        </td>
+
+        <td>
+          <%= list.category %>
+        </td>
+
+        <td>
+          <%= list.user_name %>
+        </td>
+
+        <td>
+          <%= list.phone %>
+        </td>
+
+        <td>
+          <%= list.mac_address %>
+        </td>
+
+        <td>
+          <%= list.location %>
+        </td>
+
+        <td>
+          <%= list.description %>
+        </td>
+
+        <td>
+          <%= list.last_update_user %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

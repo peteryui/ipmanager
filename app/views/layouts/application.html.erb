@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ipmanager</title>
+  <title>IP 管理</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+    <%= render "common/navbar" %>
+    <%= notice_message %>
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield :handwrite_javascript %>
 
 </body>
 </html>

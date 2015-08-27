@@ -46,3 +46,7 @@ group :development, :test do
   gem 'mysql2'
 end
 
+# login
+gem 'devise'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
