@@ -8,6 +8,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+      <% if current_user %>
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to("歷史紀錄", account_histories_path) %>
+        </li>
+      </ul>
+      <% end %>
+
       <ul class="nav navbar-nav navbar-right">
 
         <% if !current_user %>
@@ -21,9 +29,9 @@
 
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
-                <li> <%= link_to("列表管理", admin_lists_path )%></li>
+                <li> <%= link_to("管理者", admin_lists_path )%></li>
               <% end %>
-              <li> <%= link_to("修改紀錄", account_histories_path ) %></li>
+              <!-- <li> <%= link_to("歷史紀錄", account_histories_path ) %></li> -->
               <li> <%= link_to("帳號維護", edit_user_registration_path )%></li>
               <li> <%= link_to("登出", destroy_user_session_path, :method => :delete ) %> </li>
             </ul>

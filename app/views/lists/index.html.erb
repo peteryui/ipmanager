@@ -1,7 +1,3 @@
-<div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("編輯", account_lists_path, :class => "btn btn-primary btn-sm") %>
-</div>
-
 <table class="table table-bordered">
 
   <thead>
@@ -14,6 +10,7 @@
       <th width="80">網路孔</th>
       <th>備註說明</th>
       <th width="100">最後更新</th>
+      <th>動作</th>
     </tr>
   </thead>
 
@@ -50,6 +47,10 @@
 
         <td>
           <%= list.last_update_user %>
+        </td>
+
+        <td>
+          <%= link_to("編輯", account_lists_path, :class => "btn btn-primary btn-sm") %>
         </td>
       </tr>
     <% end %>
