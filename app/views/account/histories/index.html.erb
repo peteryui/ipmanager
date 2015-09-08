@@ -9,13 +9,12 @@
       <th width="150">MAC位址</th>
       <th width="80">網路孔</th>
       <th>備註說明</th>
-      <th width="100">修改者</th>
-      <th>動作</th>
+      <th>更新日期</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @lists.each do |list| %>
+    <% @histories.each do |list| %>
       <tr>
         <td>
            <%= list.ip %>
@@ -46,12 +45,8 @@
         </td>
 
         <td>
-          <%= list.last_update_user %>
+          <%= list.updated_on %>
         </td>
-
-        <td>
-          <%= link_to("編輯", edit_account_list_path(list), :class => "btn btn-primary btn-sm") %>
-         </td>
       </tr>
     <% end %>
   </tbody>

@@ -5,12 +5,14 @@ Rails.application.routes.draw do
     resources :lists
   end
 
-  resources :lists
-
   namespace :account do
     resources :lists
+    resources :histories
   end
 
+  resources :lists
+
+  # root 'lists#index'
   root 'lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,7 +10,7 @@ class CreateHistories < ActiveRecord::Migration
       t.string :location
       t.text :description
 
-      t.string :user
+      t.string :user_id
 
       t.date :created_on
       t.date :updated_on

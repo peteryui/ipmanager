@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150827024131) do
     t.string   "mac_address"
     t.string   "location"
     t.text     "description"
-    t.string   "user"
+    t.string   "user_id"
     t.date     "created_on"
     t.date     "updated_on"
     t.datetime "created_at",   null: false
