@@ -20,18 +20,39 @@ class Account::ListsController < ApplicationController
     @history = History.new(permitted)
 
     if (@history.ip != @list.ip)
-      @history.ip = @list.ip + " => " + @history.ip
+      if (@list.ip.nil?)
+        @list.ip = ""
+      end
+        @history.ip = @list.ip + " => " + @history.ip
     elsif (@history.category != @list.category)
-      @history.category = @list.category + " => " + @history.category
+      if (@list.category.nil?)
+        @list.category = ""
+      end
+        @history.category = @list.category + " => " + @history.category
     elsif (@history.user_name != @list.user_name)
-      @history.user_name = @list.user_name + " => " + @history.user_name
+      if (@list.user_name.nil?)
+        @list.user_name = ""
+      end
+        @history.user_name = @list.user_name + " => " + @history.user_name
     elsif (@history.phone_number != @list.phone_number)
-      @history.phone_number = @list.phone_number + " => " + @history.phone_number
+      if (@list.phone_number.nil?)
+        @list.phone_number = ""
+      end
+        @history.phone_number = @list.phone_number + " => " + @history.phone_number
     elsif (@history.mac_address != @list.mac_address)
-      @history.mac_address = @list.mac_address + " => " + @history.mac_address
+      if (@list.mac_address.nil?)
+        @list.mac_address = ""
+      end
+        @history.mac_address = @list.mac_address + " => " + @history.mac_address
     elsif (@history.location != @list.location)
-      @history.location = @list.location + " => " + @history.location
+      if (@list.location.nil?)
+        @list.location = ""
+      end
+        @history.location = @list.location + " => " + @history.location
     elsif (@history.description != @list.description)
+      if (@list.description.nil?)
+        @list.description = ""
+      end
       @history.description = @list.description + " => " + @history.description
     end
     @history.user_id = current_user.id
