@@ -8,10 +8,10 @@
 
 require 'csv'
 
-csv_text = File.read('IP_UTF82.csv')
+csv_text = File.read('ip_utf8.csv')
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
-  List.create!(ip: row[2], category: row[3], user_name: row[4], mac_address: row[5], description: row[6], last_update_user: "Nelson")
+  List.create!(ip: row[2], category: row[0], user_name: row[3], phone_number: row[4], mac_address: row[5], description: row[6], user_id: 1)
 end
 
 create_users = for i in 1..2 do

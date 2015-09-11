@@ -2,10 +2,10 @@
 
   <thead>
     <tr>
-      <th>IP位址</th>
+      <th width="100">IP位址</th>
       <th>使用類別</th>
-      <th>使用者</th>
-      <th width="50">分機</th>
+      <th width="80">使用者</th>
+      <th width="80">分機</th>
       <th width="150">MAC位址</th>
       <th width="80">網路孔</th>
       <th>備註說明</th>
@@ -14,38 +14,38 @@
   </thead>
 
   <tbody>
-    <% @histories.each do |list| %>
+    <% @histories.each do |record| %>
       <tr>
         <td>
-           <%= list.ip %>
+           <%= record.ip %>
         </td>
 
         <td>
-          <%= list.category %>
+          <%= record.category %>
         </td>
 
         <td>
-          <%= list.user_name %>
+          <%= record.user_name %>
         </td>
 
         <td>
-          <%= list.phone_number %>
+          <%= record.phone_number %>
         </td>
 
         <td>
-          <%= list.mac_address %>
+          <%= record.mac_address %>
         </td>
 
         <td>
-          <%= list.location %>
+          <%= record.location %>
         </td>
 
         <td>
-          <%= list.description %>
+          <%= record.description %>
         </td>
 
         <td>
-          <%= list.updated_on %>
+          <%= record.updated_on %>
         </td>
       </tr>
     <% end %>

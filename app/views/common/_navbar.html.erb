@@ -11,7 +11,7 @@
       <% if current_user %>
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to("歷史紀錄", account_histories_path) %>
+          <%= link_to("歷史紀錄", histories_path) %>
         </li>
       </ul>
       <% end %>
@@ -23,7 +23,7 @@
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi!, <%= current_user.email %>
+              Hi!, <%= current_user.name %>
               <b class="caret"></b>
             </a>
 
@@ -31,11 +31,13 @@
               <% if current_user.admin? %>
                 <li> <%= link_to("管理者", admin_lists_path )%></li>
               <% end %>
-              <!-- <li> <%= link_to("歷史紀錄", account_histories_path ) %></li> -->
-              <li> <%= link_to("帳號維護", edit_user_registration_path )%></li>
-              <li> <%= link_to("登出", destroy_user_session_path, :method => :delete ) %> </li>
+              <li>
+                 <%= link_to("帳號維護", edit_user_registration_path )%>
+               </li>
             </ul>
-
+          </li>
+          <li>
+            <%= link_to("登出", destroy_user_session_path, :method => :delete ) %>
           </li>
         <% end %>
       </ul>

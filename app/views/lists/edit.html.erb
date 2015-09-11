@@ -1,10 +1,10 @@
 <div class="container">
 
-  <%= simple_form_for [:account, @list ] , :html => { :class => "form form-horizontal"  } do |f| %>
+  <%= simple_form_for [ @list ] , :html => { :class => "form form-horizontal"  } do |f| %>
 
     <div class="form-group">
       <div class="col-sm-4">
-        <%= f.input :ip, :label => "IP位址"%>
+        <%= f.input :ip, :label => "IP位址", disabled: true%>
         <%= f.input :category, :label => "使用類別" %>
         <%= f.input :user_name, :label => "使用者" %>
         <%= f.input :phone_number, :label => "分機" %>

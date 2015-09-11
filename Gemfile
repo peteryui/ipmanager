@@ -44,8 +44,14 @@ group :development, :test do
 
   # add for mysql
   # gem 'mysql2'
-
   gem 'sqlite3'
+  gem "brakeman", require: false
+  gem "rails_best_practices", require: false
+  gem "capistrano",  require: false
+  gem "capistrano-rvm", require: false
+  gem "capistrano-rails", require: false
+  gem "capistrano-rbenv", require: false # production server use rbenv
+
 end
 
 group :production do

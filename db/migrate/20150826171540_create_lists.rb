@@ -9,7 +9,8 @@ class CreateLists < ActiveRecord::Migration
       t.string :mac_address
       t.string :location
       t.text :description
-      t.string :last_update_user
+      t.integer :user_id
+      t.string :user_ip
 
       t.timestamps null: false
     end

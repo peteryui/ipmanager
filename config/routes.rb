@@ -1,18 +1,26 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
-  namespace :admin do
-    resources :lists
+  # namespace :admin do
+  #   resources :lists
+  # end
+
+  resources :histories
+
+
+  resources :lists do
+    collection do
+      post :clean
+    end
   end
 
-  namespace :account do
-    resources :lists
-    resources :histories
-  end
+  # resources :lists do
+  #   collection do
+  #     post :clean
+  #   end
+  # end
 
-  resources :lists
-
-  # root 'lists#index'
   root 'lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
